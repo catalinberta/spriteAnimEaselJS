@@ -1,29 +1,40 @@
+//preload spritesheets with PreloadJS
+var spritesheetQueue = new createjs.LoadQueue();
+spritesheetQueue.on('complete',loadSpritesheetObjects);
+spritesheetQueue.loadManifest([
+    {id: "car", src: "/img/car.jpg"},
+    {id: "horse", src: "/img/horse.png"}
+], true);
+
 // EaselJS Sprite Sheets
 // SpriteSheet Documentation http://createjs.com/Docs/EaselJS/classes/SpriteSheet.html
-var imageData = {
-    images: ["./img/car.jpg"],
-    frames: {width:126, height:126},
-    framerate: 30,
-    animations: {
-        run : { frames : [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120], 
-        			next:false 
-				}
-    }
-};
-var imageData2 = {
-    images: ["./img/horse.png"],
-    frames: {width:128, height:128},
-    framerate: 20,
-    animations: {
-        run : { frames : [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120], 
-        			next:false 
-    			}
-    }
-};
+var imageData, imageData2;
+function loadSpritesheetObjects() {
+	imageData = {
+	    images: [spritesheetQueue.getResult("car")], // Image element from PreloadJS LoadQueue
+	    frames: {width:126, height:126}, // Frame sizes
+	    framerate: 30, // Spritesheet framerate
+	    animations: {
+	        run : { frames : [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,29,30], // Animation frames
+	        			next:true // Repeat animation
+					}
+	    }
+	};
+	imageData2 = {
+	    images: [spritesheetQueue.getResult("horse")],
+	    frames: {width:128, height:128},
+	    framerate: 20,
+	    animations: {
+	        run : { frames : [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23],
+	        			next:true
+	    			}
+	    }
+	};
+}
 
+//on ready
 $(function() {
-
-	//init
+	//init canvas
 	var firstCanvas = new SpriteAnim('canvas');
 	var secondCanvas = new SpriteAnim('canvas2');
 
