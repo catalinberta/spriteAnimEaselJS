@@ -15,6 +15,7 @@ requestAnimationFrame.
 #Usage
 
 Define your EaselJS Spritesheet objects:
+```
     var imageData = {
         images: ['/path/to/image.jpg'], // Path to image
         frames: {width:126, height:126}, // Frame sizes
@@ -23,7 +24,7 @@ Define your EaselJS Spritesheet objects:
             run : [0,120,true] // Range of frames, boolean whether to repeat animation
         }
     };
-
+```
 Initiate SpriteAnim on a canvas element
 var myCanvas = new SpriteAnim('canvas_id_here');
 
