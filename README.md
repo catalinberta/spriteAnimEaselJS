@@ -26,11 +26,17 @@ Define your EaselJS Spritesheet objects:
     };
 ```
 Initiate SpriteAnim on a canvas element
-var myCanvas = new SpriteAnim('canvas_id_here');
+`var myCanvas = new SpriteAnim('canvas_id_here');`
 
 Run spritesheet animation
 `myCanvas.start(imageData,126,126);`
 
 #Methods
-**Stop**
-obj.stop() i.e. `myCanvas.stop()`
+####**Stop**
+obj.stop()
+
+i.e. `myCanvas.stop()`
+
+
+There you have it, a very easy way to create Sprite Animations in WebGL with fallback to canvas.
+I use it to create smooth Sprite Animations in various places on a webpage.
