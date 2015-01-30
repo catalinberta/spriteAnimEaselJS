@@ -5,9 +5,7 @@ var imageData = {
     frames: {width:126, height:126}, // Frame sizes
     framerate: 30, // Spritesheet framerate
     animations: {
-        run : { frames : [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,29,30], // Animation frames
-        			next:true // Repeat animation
-				}
+        run : [0,120,true]
     }
 };
 var imageData2 = {
