@@ -29,9 +29,12 @@ Initiate SpriteAnim on a canvas element
 `var myCanvas = new SpriteAnim('canvas_id_here');`
 
 Run spritesheet animation
-`myCanvas.start(imageData,126,126);`
+`myCanvas.start(imageData,126,126,false);`
 
 #Methods
+####**Start**
+obj.start(spritesheetObject,width,height,className)
+
 ####**Stop**
 obj.stop()
 

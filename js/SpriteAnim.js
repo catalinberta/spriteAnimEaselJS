@@ -18,23 +18,31 @@
 **
 */
 function SpriteAnim(canvasId) {
+	this.init(canvasId);
+}
+SpriteAnim.prototype.init = function(canvasId) {
 	this.canvasId = canvasId;
 }
-SpriteAnim.prototype.start = function(imageData,canvasWidth,canvasHeight) {
+SpriteAnim.prototype.start = function(imageData,canvasWidth,canvasHeight,className) {
 	createjs.Ticker.off("tick", this.animTicker); // Stop any previous Tickers for this instance
-	this.canvasWidth = canvasWidth,
-	this.canvasHeight = canvasHeight,
-	this.stage = new createjs.SpriteStage(this.canvasId),
-	this.stage.canvas.width = this.canvasWidth,
-	this.stage.canvas.height = this.canvasHeight,
+	this.canvasWidth = canvasWidth;
+	this.canvasHeight = canvasHeight;
+	this.stage = new createjs.SpriteStage(this.canvasId);
+	this.stage.canvas.width = this.canvasWidth;
+	this.stage.canvas.height = this.canvasHeight;
 	this.stage.updateViewport(this.canvasWidth,this.canvasHeight);
-	this.imageData = imageData,
+	this.imageData = imageData;
 	this.ss = new createjs.SpriteSheet(this.imageData);
 	this.animation = new createjs.Sprite(this.ss);
 	this.container = this.animation;
 	this.stage.addChild(this.container);
 	this.animation.gotoAndPlay("run");
 	this.animTicker = createjs.Ticker.on("tick", this.stage);
+	this.className = className;
+
+	if(this.className) {
+		this.stage.canvas.className = this.stage.canvas.className + ' ' + this.className;
+	}
 }
 SpriteAnim.prototype.stop = function() {
 	createjs.Ticker.off("tick", this.animTicker);
