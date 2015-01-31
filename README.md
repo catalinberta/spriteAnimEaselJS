@@ -42,4 +42,4 @@ i.e. `myCanvas.stop()`
 
 
 There you have it, a very easy way to create Sprite Animations in WebGL with fallback to canvas.
-I use it to create smooth Sprite Animations in various places on a webpage.
+I use it to create smooth Sprite Animations with particles in various places on a webpage.
