@@ -27,6 +27,8 @@ And my “snippet”
 
 [SpriteAnim.js](https://github.com/catalinberta/SpriteAnim/blob/master/js/SpriteAnim.js)
 
+It's very important that you get this version of spritestage.js, as it is a custom version with a fix from one of the CreateJS devs who fixed an important issue with loading the spritesheets before rendering in WebGL, and it is not yet available in EaselJS, not at this point at least.
+
 Create the html canvas element
 `<canvas id="canvas_id_here"></canvas>`
 
