@@ -14,6 +14,17 @@ requestAnimationFrame.
 
 #Usage
 
+Load
+{EaselJS v0.8.0+}(https://code.createjs.com/easeljs-0.8.0.min.js)
+{spritecontainer.js}(https://github.com/catalinberta/SpriteAnim/blob/9edf4ae27f8997c1f214424b7d3f516db4803d47/js/spritecontainer.js)
+{spritestage.js}(https://github.com/catalinberta/SpriteAnim/blob/79737c90a9d8e3df0c122454d7b855b485ef46f3/js/spritestage.js)
+
+And my “snippet”
+{SpriteAnim.js}(https://github.com/catalinberta/SpriteAnim/blob/master/js/SpriteAnim.js)
+
+Create the html canvas element
+`<canvas id="canvas_id_here"></canvas>`
+
 Define your EaselJS Spritesheet objects:
 ```
     var imageData = {
@@ -25,6 +36,8 @@ Define your EaselJS Spritesheet objects:
         }
     };
 ```
+EaselJS Spritesheet documentation {here}(http://createjs.com/Docs/EaselJS/classes/SpriteSheet.html)
+
 Initiate SpriteAnim on a canvas element
 `var myCanvas = new SpriteAnim('canvas_id_here');`
 
