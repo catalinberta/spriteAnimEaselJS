@@ -27,10 +27,10 @@ $(function() {
 
 	//first canvas actions
 	$('.canvas_1 input.start_1').click(function() {
-		firstCanvas.start(imageData,126,126,false);
+		firstCanvas.start(imageData,'run',false);
 	});
 	$('.canvas_1 input.start_2').click(function() {
-		firstCanvas.start(imageData2,128,128,false);
+		firstCanvas.start(imageData2,'run',false);
 	});
 	$('.canvas_1 input.stop').click(function() {
 		firstCanvas.stop();
@@ -39,10 +39,10 @@ $(function() {
 
 	//second canvas actions
 	$('.canvas_2 input.start_1').click(function() {
-		secondCanvas.start(imageData,126,126,false);
+		secondCanvas.start(imageData,'run',false);
 	});
 	$('.canvas_2 input.start_2').click(function() {
-		secondCanvas.start(imageData2,128,128,false);
+		secondCanvas.start(imageData2,'run',false);
 	});
 	$('.canvas_2 input.stop').click(function() {
 		secondCanvas.stop();
