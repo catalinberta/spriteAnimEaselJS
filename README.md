@@ -63,6 +63,14 @@ obj.stop()
 
 i.e. `myCanvas.stop()`
 
+#Preloading
+
+It's recommended that you preload all of the spritesheets that you are planning to use and if you do so, you need to preload an image for each animation or canvas you have concurrently. For example, if you have two running animations at the same time with the same spritesheet, you need to preload it twice under different variables/identifiers, as preloaded objects cannot serve WebGL rendering at the same time. 
+
+I will update this as soon as a fix will be available.
+
+--
 
 There you have it, a very easy way to create Sprite Animations in WebGL with fallback to canvas.
-I use it to create smooth Sprite Animations with particles in various places on a webpage.
+I use it to create smooth particle-based sprite animations in various places on a webpage or game.
+
