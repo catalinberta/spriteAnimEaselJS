@@ -27,13 +27,12 @@ SpriteAnim.prototype.init = function(canvasId) {
 	this.stage = new createjs.SpriteStage(this.canvasId);
 }
 
-SpriteAnim.prototype.start = function(imageData,animationName,className,runOnComplete) {
+SpriteAnim.prototype.start = function(imageData,animationName,className,callback) {
 	createjs.Ticker.off("tick", this.animTicker); // Stop any previous Tickers for this instance
 	if(this.stage.getChildAt(0)) { this.stage.removeChildAt(0) } // If child already exists, remove it
 	this.imageData = imageData;
 	this.canvasWidth = imageData.frames.width;
 	this.canvasHeight = imageData.frames.height;
-	this.runOnComplete = runOnComplete;
 	this.stage.canvas.width = this.canvasWidth;
 	this.stage.canvas.height = this.canvasHeight;
 	this.stage.updateViewport(this.canvasWidth,this.canvasHeight);
@@ -49,8 +48,11 @@ SpriteAnim.prototype.start = function(imageData,animationName,className,runOnCom
 		this.stage.canvas.className = this.stage.canvas.className + ' ' + this.className;
 	}
 
-	if(this.runOnComplete) {
-		this.animation.on('animationend', this.onComplete)
+	// The callback is run each time a spritesheet animation loop is completed,
+	// so it's probably best used when spritesheets are not on repeat,
+	// then again, whatever makes you happy
+	if(callback) {
+		this.animation.on('animationend', callback, this)
 	}
 }
 
@@ -58,8 +60,4 @@ SpriteAnim.prototype.stop = function() {
 	createjs.Ticker.off("tick", this.animTicker);
 	this.stage.removeAllChildren();
 	this.stage.update();
-}
-
-SpriteAnim.prototype.onComplete = function() {
-	// On complete code here
 }
