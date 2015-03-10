@@ -53,10 +53,15 @@ Initiate SpriteAnim on a canvas element
 
 Run spritesheet animation
 `myCanvas.start(imageData,'run',false,false);`
+
 @Param1: easeljs spritesheet object
+
 @Param2: animation name specified in spritesheet object
+
 @Param3: custom className for the canvas in question || false
+
 @Param4: anonymous callback function that loads when spritesheet finishes || false
+
 
 #Methods
 ####**Start**
