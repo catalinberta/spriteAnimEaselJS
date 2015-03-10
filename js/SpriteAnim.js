@@ -56,6 +56,8 @@ SpriteAnim.prototype.start = function(imageData,animationName,className,runOnCom
 
 SpriteAnim.prototype.stop = function() {
 	createjs.Ticker.off("tick", this.animTicker);
+	this.stage.removeAllChildren();
+	this.stage.update();
 }
 
 SpriteAnim.prototype.onComplete = function() {
