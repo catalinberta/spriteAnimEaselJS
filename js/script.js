@@ -55,7 +55,10 @@ $(function() {
 
 	//first canvas actions
 	$('.canvas_1 input.start_1').click(function() {
-		firstCanvas.start(imageData,'run',false,true);
+		firstCanvas.start(imageData,'run',false,function(){
+			console.log('Finished spritesheet loop, here is my instance:')
+			console.log(this)
+		});
 	});
 	$('.canvas_1 input.start_2').click(function() {
 		firstCanvas.start(imageData2,'run',false,false);
@@ -70,7 +73,7 @@ $(function() {
 		secondCanvas.start(imageData3,'run',false,false);
 	});
 	$('.canvas_2 input.start_2').click(function() {
-		secondCanvas.start(imageData4,'run',false,true);
+		secondCanvas.start(imageData4,'run',false,false);
 	});
 	$('.canvas_2 input.stop').click(function() {
 		secondCanvas.stop();
