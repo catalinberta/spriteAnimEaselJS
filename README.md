@@ -38,7 +38,7 @@ Create the html canvas element
 Define your EaselJS Spritesheet objects:
 ```
     var imageData = {
-        images: ['/path/to/image.jpg'], // Path to image
+        images: ['/path/to/image.jpg'], // Path to image || preferably preloaded
         frames: {width:126, height:126}, // Frame sizes
         framerate: 30, // Spritesheet framerate
         animations: {
@@ -52,11 +52,15 @@ Initiate SpriteAnim on a canvas element
 `var myCanvas = new SpriteAnim('canvas_id_here');`
 
 Run spritesheet animation
-`myCanvas.start(imageData,'run',false);`
+`myCanvas.start(imageData,'run',false,false);`
+@Param1: easeljs spritesheet object
+@Param2: animation name specified in spritesheet object
+@Param3: custom className for the canvas in question || false
+@Param4: anonymous callback function that loads when spritesheet finishes || false
 
 #Methods
 ####**Start**
-obj.start(spritesheetObject,width,height,className)
+obj.start(spritesheetObject,width,height,className,callback)
 
 ####**Stop**
 obj.stop()
