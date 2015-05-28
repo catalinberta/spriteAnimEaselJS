@@ -1,4 +1,7 @@
 # SpriteAnim
+
+######NOTE: Use this if you already use EaselJS (or the CreateJS suite) in your project, if not, then head over to the version that does not require EeaselJS, [here](https://github.com/catalinberta/SpriteAnimJS), as it is much lighter.
+
 Create easy sprite animations using EaselJS
 
 This is merely a code snippet that has a basic setup for sprite
